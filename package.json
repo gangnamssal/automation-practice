@@ -9,7 +9,8 @@
     "postinstall": "husky install",
     "lint": "eslint --cache src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier --cache --write ."
+    "format": "prettier --cache --write .",
+    "deploy": "pnpm run build && aws s3 sync dist/ s3://gangnamssal-automation-test --delete"
   },
   "dependencies": {
     "react": "^18.2.0",
